@@ -1,66 +1,41 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+import Link from "next/link";
+
+// List of all available books shown on homepage
+
+const books = [
+  { id: 1, title: "Data Structures" },
+  { id: 2, title: "Web Development" },
+  { id: 3, title: "Operating Systems" },
+  { id: 4, title: "Database Systems" },
+  { id: 5, title: "Machine Learning" },
+];
+
+// Home page component that displays all books
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.js file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <div className="container">
+      <h1 className="heading">📚 Books</h1>
+
+      <div className="grid">
+        {books.map((book) => (
+          <Link key={book.id} href={`/book/${book.id}`}>
+            <div className="card">
+
+              {/* ICON */}
+              <div className="icon">📚</div>
+
+              {/* TITLE */}
+              <h2>{book.title}</h2>
+
+              {/* ACTION */}
+              <p className="linkText">View Chapters →</p>
+
+            </div>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }

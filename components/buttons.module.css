@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.btn {
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  color: white;
+}
+
+.primary {
+  background: #22c55e;
+}
+
+.secondary {
+  background: #3b82f6;
+}
+
+.warning {
+  background: #f59e0b;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
