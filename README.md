@@ -274,7 +274,7 @@ The demo video shows:
 * Button clicks
 * Video tracking
 * Analytics dashboard updating
-Video Link :- https://youtu.be/HE7LXyifp3g
+Video Link :- https://youtu.be/7zZVn__rekA
 ---
 
 # 🏁 Conclusion
