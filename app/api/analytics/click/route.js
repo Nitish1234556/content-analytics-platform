@@ -1,8 +1,10 @@
 import { pool } from "@/lib/db";
 import { initDB } from "@/lib/initDB";
-await initDB();
+
 export async function GET() {
   try {
+    await initDB(); // ✅ inside function
+
     const result = await pool.query(`
       SELECT content_id, button_label, COUNT(*) AS total_clicks
       FROM button_clicks

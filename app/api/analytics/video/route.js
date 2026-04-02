@@ -1,7 +1,10 @@
 import { pool } from "@/lib/db";
+import { initDB } from "@/lib/initDB";
 
 export async function GET() {
   try {
+    await initDB(); // ✅ ensure tables exist
+
     const result = await pool.query(`
       SELECT 
         video_id,

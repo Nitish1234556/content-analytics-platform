@@ -1,11 +1,11 @@
 import { pool } from "@/lib/db";
 import { initDB } from "@/lib/initDB";
 
-await initDB();
 export async function POST(req) {
   try {
-    const body = await req.json();
+    await initDB(); // ✅ MUST be inside function
 
+    const body = await req.json();
     const { user_id, video_id, content_id, watched_seconds } = body;
 
     await pool.query(

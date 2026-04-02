@@ -1,8 +1,10 @@
 import { pool } from "@/lib/db";
 import { initDB } from "@/lib/initDB";
-await initDB();
+
 export async function GET() {
   try {
+    await initDB(); // ✅ MUST be inside
+
     const result = await pool.query(`
       WITH clicks AS (
         SELECT 
